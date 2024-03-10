@@ -1,0 +1,26 @@
+import java.util.Scanner;
+public class Main{
+    public static void main(String args[]){
+        Scanner scanner = new Scanner(System.in);
+            int n, k, l, c, d, p, nl, np;
+            n= scanner.nextInt();
+            k =scanner.nextInt();;
+            l=scanner.nextInt();;
+            c=scanner.nextInt();
+            d=scanner.nextInt();
+            p=scanner.nextInt();
+            nl =scanner.nextInt();
+            np =scanner.nextInt();
+            
+            int ans =0;
+            int tdrink = k*l;
+            int tdt = tdrink/nl;
+            int tslices= c*d;
+            int tsalt = p/ np;
+            ans = (Math.min(Math.min(tdt, tslices), tsalt))/n;
+            System.out.print("answer is "+ ans);
+            scanner.close();
+        
+        
+    }
+}
