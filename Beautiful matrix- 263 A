@@ -16,6 +16,6 @@ public class Main{
             
         }
         System.out.print(Math.abs(i-row)+ Math.abs(j-col));
-        
+     
     }
 }
