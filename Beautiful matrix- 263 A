@@ -1,0 +1,21 @@
+import java.util.*;
+public class Main{
+    public static void main(String args[]){
+        
+        Scanner sc = new Scanner(System.in);
+        int i=3, j=3;
+        int row=0, col=0;
+        
+        for(int k =1;k<=5;k++){
+            String s = sc.nextLine().replace(" ","");
+            if(s.contains("1")){
+                row = k;
+                col = s.indexOf("1")+1;
+                break;
+            }
+            
+        }
+        System.out.print(Math.abs(i-row)+ Math.abs(j-col));
+        
+    }
+}
