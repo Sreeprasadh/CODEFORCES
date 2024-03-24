@@ -1,0 +1,49 @@
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        
+     while(t!=0){   
+        int n= sc.nextInt();
+        int[] arr = new int[n];
+        
+    
+        for(int i=0;i<n;i++){
+            arr[i] = sc.nextInt();
+        }
+        Map<Integer,Integer> mpp = new HashMap<>();
+        for(int i=0;i<n;i++){
+            if(mpp.containsKey(arr[i])){
+                mpp.put(arr[i], mpp.get(arr[i])+1);
+            }
+            else{
+                mpp.put(arr[i],1);
+            }
+        }
+        if(mpp.size()==1){
+            System.out.println("Yes ");
+            
+        }
+        else if(mpp.size()>2){
+            System.out.println("No ");
+        }
+        
+        else{
+            ArrayList<Integer> list = new ArrayList<Integer>();
+            for(Map.Entry<Integer, Integer> mapElement : mpp.entrySet()){
+                list.add(mapElement.getValue());
+            }
+            if(Math.abs(list.get(0)-list.get(1)) <= 1){
+                System.out.println("Yes ");
+            }
+            else{
+                System.out.println("No ");
+            }
+        }
+        
+        t--;
+        
+        }
+  }  
+}
