@@ -1,0 +1,30 @@
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int t= sc.nextInt();
+        while(t!=0){
+            int n = sc.nextInt();
+            int[] a = new int[n];
+            
+            for(int i=0;i<n-1;i++){
+                a[i] = sc.nextInt();
+            }
+            int s1=0,s2=0;
+            
+            for(int i=0;i<n;i++){
+                if(a[i]>0){
+                    s1+=a[i];
+                }
+                else{                                     //-30 12 -57 7 0 -81 -68 41 -89 0
+                    s2+=a[i];
+                }
+            }
+            int res = -1*(s1+s2);
+            System.out.println(res);
+            
+            
+            t--;
+        }
+    }
+}
