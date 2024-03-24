@@ -1,0 +1,38 @@
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int t= sc.nextInt();
+        while(t!=0){
+            int n = sc.nextInt();
+            int m = sc.nextInt();
+            sc.nextLine();
+            String x =  sc.nextLine();
+            String s = sc.nextLine();
+            
+            int cnt=6;
+            int op=0;
+            boolean flag = false;
+            
+         while(cnt!=0){
+            if(x.indexOf(s)!=-1)
+            {
+                flag = true;
+                break;
+            }
+            
+            x= x+x;
+            op++;
+        
+            cnt--;
+         }
+         if(flag == true){
+             System.out.println(op);
+         }
+         else{
+             System.out.println(-1);
+         }
+         t--;
+        }
+    }
+}
