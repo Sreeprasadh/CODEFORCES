@@ -1,0 +1,46 @@
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int t= sc.nextInt();
+        while(t-->0){
+            int n =sc.nextInt();
+            int[] a = new int[n];
+            for(int i=0;i<n;i++){
+                a[i]= sc.nextInt();
+            }
+            int neg =0, pos =0;
+            int ns=0, ps=0, cnt=0;
+            for(int i=0;i<n;i++){
+                if(a[i] ==-1){
+                    neg++;
+                    
+                }
+                else{
+                    pos++;
+                   
+                }
+            }
+            if(neg<=pos){
+                if(neg%2 ==0){
+                    System.out.println(0);
+                }
+                else{
+                    System.out.println(1);
+                }
+            }
+            else{
+                int op = neg - n/2;
+                if((n/2)%2!=0){
+                    op++;
+                    System.out.println(op);
+                }
+                else{
+                    System.out.println(op);
+                }
+            }
+            
+            
+        }
+    }
+}
