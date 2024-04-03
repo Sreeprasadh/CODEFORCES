@@ -1,0 +1,71 @@
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        while (t-- > 0) {
+            int a = sc.nextInt();
+            int b = sc.nextInt();
+            int xk = sc.nextInt();
+            int yk = sc.nextInt();
+ 
+            int xq = sc.nextInt();
+            int yq = sc.nextInt();
+ 
+            List<Pair> list = new ArrayList<>();
+            list.add(new Pair(a, b));
+            list.add(new Pair(a, -b));
+            list.add(new Pair(-a, b));
+            list.add(new Pair(-a, -b));
+            list.add(new Pair(b, a));
+            list.add(new Pair(b, -a));
+            list.add(new Pair(-b, a));
+            list.add(new Pair(-b, -a));
+ 
+            Set<Pair> s1 = new HashSet<>();
+            Set<Pair> s2 = new HashSet<>();
+            for (Pair p : list) {
+                int x1 = xk + p.val1;
+                int y1 = yk + p.val2;
+                s1.add(new Pair(x1, y1));
+ 
+                int x2 = xq + p.val1;
+                int y2 = yq + p.val2;
+                s2.add(new Pair(x2, y2));
+            }
+ 
+            // Counting common pairs between s1 and s2
+            int c = 0;
+            for (Pair p : s1) {
+                if (s2.contains(p)) {
+                    c++;
+                }
+            }
+ 
+            System.out.println(c);
+        }
+    }
+}
+class Pair {
+    int val1;
+    int val2;
+ 
+    public Pair(int _val1, int _val2) {
+        val1 = _val1;
+        val2 = _val2;
+    }
+ 
+    // Overriding equals and hashCode methods for Set comparison
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Pair pair = (Pair) o;
+        return val1 == pair.val1 && val2 == pair.val2;
+    }
+ 
+    @Override
+    public int hashCode() {
+        return Objects.hash(val1, val2);
+    }
+}
