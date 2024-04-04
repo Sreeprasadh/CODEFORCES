@@ -1,0 +1,23 @@
+import java.util.Scanner;
+ 
+public class Main {
+    public static void main(String[] args) {
+        final int B = 26;
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        while (t-- > 0) {
+            long n = sc.nextLong();
+            long k = sc.nextLong();
+            String s = sc.next();
+            int[] v = new int[B];
+            for (int p = 0; p < s.length(); p++) {
+                v[s.charAt(p) - 'a']++;
+            }
+            long cnt = 0;
+            for (int p = 0; p < B; p++) {
+                cnt += v[p] % 2;
+            }
+            System.out.println(cnt <= k + 1 ? "YES" : "NO");
+        }
+    }
+}
