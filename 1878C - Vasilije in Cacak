@@ -1,0 +1,24 @@
+import java.util.*;
+    public class Main{
+        public static void main(String[] args){
+            Scanner sc = new Scanner(System.in);
+            long t = sc.nextLong();
+            while(t-->0){
+                long n = sc.nextLong();
+                long k = sc.nextLong();
+                long x = sc.nextLong();
+                
+                long ts = n*(n+1)/2;
+                long mins = k*(k+1)/2;
+                long maxs = ts - ((n-k)*(n-k + 1))/2;
+                
+                if(x >= mins && x <= maxs){
+                    System.out.println("Yes ");
+                    
+                }
+                else{
+                    System.out.println("No ");
+                }
+            }
+        }
+    }
