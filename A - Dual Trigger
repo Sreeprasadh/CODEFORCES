@@ -1,0 +1,44 @@
+import java.util.*;
+public class dualTrigger{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int t= sc.nextInt();
+        while(t-->0){
+            int n= sc.nextInt();
+            String s = sc.next();
+            if (possible(s)) {
+                System.out.println("Yes ");
+            }
+            else{
+                System.out.println("No ");
+            }
+        }
+    }
+    public static boolean possible(String s){
+        int c=0;
+        for(int i=0;i<s.length();i++){
+            if(s.charAt(i)== '1'){
+                c++;
+            }
+        }
+        if(c==0)
+           return true;
+        if (c>=4 && c%2==0) {
+            return true;
+        }
+        else if (c ==2) {
+            int f = s.indexOf('1');
+            int l = s.lastIndexOf('1');
+            if (l == f+1) {
+                return false;
+            }
+            else
+               return true;
+        }
+        else
+          return false;
+        
+        
+    }
+    
+}
