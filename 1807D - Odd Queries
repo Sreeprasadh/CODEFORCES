@@ -1,0 +1,43 @@
+import java.util.*;
+ 
+public class OddQueries {
+ 
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        while (t-- > 0) {
+            solve(sc);
+        }
+        sc.close();
+    }
+ 
+    static void solve(Scanner sc) {
+        int n = sc.nextInt();
+        int q = sc.nextInt();
+ 
+        long[] arr = new long[n + 1];
+        for (int i = 1; i <= n; i++)
+            arr[i] = sc.nextLong();
+ 
+        long[] psum = new long[n + 1];
+        for (int i = 1; i <= n; i++)
+            psum[i] = psum[i - 1] + arr[i];
+ 
+        while (q-- > 0) {
+            long l = sc.nextLong();
+            long r = sc.nextLong();
+            long k = sc.nextLong();
+ 
+            long sum = psum[(int) (l - 1)] + psum[n] - psum[(int) r] + k * (r - l + 1);
+ 
+            if (isOdd(sum))
+                System.out.println("yes");
+            else
+                System.out.println("no");
+        }
+    }
+ 
+    static boolean isOdd(long num) {
+        return num % 2 != 0;
+    }
+}
