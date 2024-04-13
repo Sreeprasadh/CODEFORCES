@@ -1,0 +1,40 @@
+import java.util.*;
+public class arrayCloning{
+    public static void main(String[] args){
+        Scanner sc  = new Scanner(System.in);
+        int t = sc.nextInt();
+        while(t-- > 0){
+            int n = sc.nextInt();
+            long[] a = new long[n];
+            for(int i=0; i<n; i++){
+                a[i] = sc.nextLong();
+            }
+            int maxel = -1;
+            int cnt=0;
+            HashMap<Long, Integer> mpp = new HashMap<>();
+            for(int i=0; i<n; i++){
+                if(mpp.containsKey(a[i]))
+                   mpp.put(a[i], mpp.get(a[i])+1);
+                else 
+                   mpp.put(a[i], 1);
+                maxel = Math.max(maxel, mpp.get(a[i]));
+            }
+            if(maxel == n){
+                System.out.println(0);
+            }
+            else{
+                cnt =1;
+              while(maxel <= n){
+                if(maxel+maxel >=n){
+                    cnt+= (n-maxel);
+                    break;
+                }
+                cnt+= maxel;
+                maxel*=2;
+                cnt++;
+              }
+              System.out.println(cnt);
+            }
+        }
+    }
+}
