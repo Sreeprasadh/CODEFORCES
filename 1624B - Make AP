@@ -1,0 +1,26 @@
+import java.util.*;
+public class makeAp{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        while(t-- >0){
+            long a = sc.nextLong();
+            long b = sc.nextLong();
+            long c = sc.nextLong();
+ 
+            if(Check(a, b, c))
+              System.out.println("YES ");
+            else
+            System.out.println("NO ");
+        }
+    }
+    private static boolean Check(long a, long b, long c){
+        if(((2*b)-c)%a ==0 && (2*b)-c >0)
+           return true;
+        else if((a+c)%(2*b) ==0)
+           return true;
+        else if(((2*b)-a)%c == 0 && (2*b)-a >0)
+           return true;
+        return false;
+    }
+}
