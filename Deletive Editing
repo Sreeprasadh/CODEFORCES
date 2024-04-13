@@ -1,0 +1,30 @@
+import java.util.*;
+public class deletiveEditing{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        while(n-- > 0){
+            String s = sc.next();
+            String t = sc.next();
+
+            int[] count = new int[26];
+            for(int i=0; i<t.length(); i++){
+                count[t.charAt(i) - 'A']++;
+            }
+            StringBuilder temp = new StringBuilder();
+            for(int i=s.length()-1; i>=0; i--){
+                if(count[s.charAt(i) - 'A'] >0){
+                    temp.append(s.charAt(i));
+                    count[s.charAt(i) -'A']--;
+                }
+            }
+            temp.reverse();
+            if(temp.toString().equals(t)){
+                System.out.println("Yes ");
+            }
+            else{
+                System.out.println("No ");
+            }
+        }
+    }
+}
