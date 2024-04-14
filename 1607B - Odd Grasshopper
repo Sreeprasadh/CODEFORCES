@@ -1,0 +1,29 @@
+import java.util.*;
+import java.math.BigInteger;
+ 
+public class oddGrasshopper {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        while (t-- > 0) {
+            BigInteger x = sc.nextBigInteger();
+            BigInteger n = sc.nextBigInteger();
+ 
+            BigInteger y = n.mod(BigInteger.valueOf(4));
+            BigInteger z = BigInteger.ZERO;
+            if (y.equals(BigInteger.ONE)) {
+                z = n.negate();
+            } else if (y.equals(BigInteger.TWO)) {
+                z = BigInteger.ONE;
+            } else if (y.equals(BigInteger.valueOf(3))) {
+                z = n.add(BigInteger.ONE);
+            }
+ 
+            if (x.mod(BigInteger.valueOf(2)).equals(BigInteger.ONE)) {
+                System.out.println(x.subtract(z));
+            } else {
+                System.out.println(x.add(z));
+            }
+        }
+    }
+}
