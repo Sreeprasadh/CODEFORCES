@@ -1,0 +1,31 @@
+import java.util.*;
+public class oddDivisor{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int t  = sc.nextInt();
+        while(t-- >0){
+            long n = sc.nextLong();
+            
+            if(n%2 != 0){
+                 System.out.println("Yes ");
+            }
+            else{
+                boolean f = false;
+                while(n >=1){
+                   n = n/2;
+                   if(n%2 !=0 && n!=1){
+                    f = true;
+                    break;
+                   }
+ 
+                }
+                if(f == true){
+                    System.out.println("Yes ");
+                }
+                else{
+                    System.out.println("No ");
+                }
+            }
+        }
+    }
+}
