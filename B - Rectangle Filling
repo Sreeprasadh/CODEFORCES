@@ -1,0 +1,61 @@
+import java.util.*;
+public class rectangleFilling{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        while(t-- >0){
+            int n = sc.nextInt();
+            int m = sc.nextInt();
+            char[][] a = new char[n][m];
+ 
+            for(int i=0; i<n;i++){
+                String row = sc.next();
+                for(int j =0 ; j<m ; j++){
+                    a[i][j] = row.charAt(j);
+                }
+            }
+ 
+            boolean ans = checkPossible(a,n,m,'W')||checkPossible(a,n,m,'B');
+            if(ans){
+                System.out.println("Yes ");
+            }
+            else{
+                System.out.println("No ");
+            }
+        }
+    }
+    private static boolean checkPossible(char[][] a, int n, int m, char ch){
+ 
+        boolean res1 = false;
+        boolean res2 = false;
+        boolean res3 = false;
+        boolean res4 = false;
+        for(int i=0; i<m;i++){
+            if(a[0][i] == ch){
+               res1 = true;
+            }
+        }
+        for(int i=0; i<m;i++){
+            if(a[n-1][i] == ch){
+                res2 = true;
+            }
+        }
+        for(int i=0;i<n;i++){
+            if(a[i][0] == ch){
+                res3 = true;
+            }
+        }
+        for(int i=0; i<n; i++){
+            if(a[i][m-1] == ch){
+                res4 = true;
+            }
+        }
+ 
+        if(res1 == true && res2 == true && res3 == true && res4 == true){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+}
