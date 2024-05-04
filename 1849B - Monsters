@@ -1,0 +1,50 @@
+import java.util.*;
+ 
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int T = sc.nextInt();
+        while (T-- > 0) {
+            int n = sc.nextInt();
+            int k = sc.nextInt();
+ 
+            List<Pair> hMap = new ArrayList<>();
+            for (int i = 0; i < n; i++) {
+                int num = sc.nextInt();
+                int res = num % k;
+                if (res == 0) {
+                    res += k;
+                }
+                hMap.add(new Pair(-res, i));
+            }
+ 
+            Collections.sort(hMap);
+            for (Pair ele : hMap) {
+                System.out.print((ele.second + 1) + " ");
+            }
+            System.out.println();
+        }
+        sc.close(); // close the scanner object
+    }
+ 
+    static class Pair implements Comparable<Pair> {
+        int first;
+        int second;
+ 
+        Pair(int first, int second) {
+            this.first = first;
+            this.second = second;
+        }
+ 
+        @Override
+       
+       public int compareTo(Pair other) {
+          if (this.first != other.first) {
+             return Integer.compare(this.first, other.first); // Sort by first element in ascending order
+           } else {
+                return Integer.compare(this.second, other.second); // Sort by second element in ascending order
+                    }
+            }
+
+    }
+}
