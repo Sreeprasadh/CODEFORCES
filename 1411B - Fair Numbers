@@ -1,0 +1,36 @@
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        
+        int t = sc.nextInt();
+        
+        while(t-->0){
+            long n = sc.nextLong();
+            long ans = 0;
+            
+            for(long i= n; i<= 1e18; i++){
+                  long num = i;
+                  long temp = i;
+                  boolean flag = true;
+                  while(temp >0){
+                      long rem = temp % 10;
+                      temp = temp/10;
+                      
+                      if(rem != 0 && num % rem !=0){
+                          flag = false;
+                          break;
+                      }
+                  }
+                  if(flag){
+                      ans = num;
+                      break;
+                  }
+                  else{
+                      continue;
+                  }
+            }
+            System.out.println(ans);
+        }
+    }
+}
