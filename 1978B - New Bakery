@@ -1,0 +1,42 @@
+import java.util.*;
+ 
+public class newBakery {
+ 
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+ 
+        while(t-- >0){
+            
+            long n = sc.nextLong();
+            long a = sc.nextLong();
+            long b = sc.nextLong();
+            
+            if(a >=b){
+                long ans = (n*a);
+                System.out.println(ans);
+                continue;
+            }
+            else{
+                long k = Math.min(n, b);
+                long res =0;
+                
+                for(long i=1; i<=k; i++){
+                   long amnt = (b - i)+1;
+                   if(amnt >= a){
+                    res += amnt;
+                   }
+                   else{
+                    long left = (n - i )+ 1;
+                    res += (left*a);
+                    break;
+                   }
+                }
+                
+                System.out.println(res);
+             
+                continue;
+            }
+        }
+    }
+}
