@@ -1,0 +1,39 @@
+import java.util.*;
+
+public class Teleporters {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+
+        while (t-- > 0) {
+            int n = sc.nextInt();
+            long c = sc.nextLong();
+
+            ArrayList<Long> a = new ArrayList<>();
+            for (int i = 0; i < n; i++) {
+                a.add(sc.nextLong());
+            }
+
+            PriorityQueue<Long> pq = new PriorityQueue<>();
+
+            for (int i = 0; i < n; i++) {
+                pq.offer(a.get(i) + (i+1)); 
+            }
+
+            long cnt = 0;
+
+            while (!pq.isEmpty()) {
+                
+                long val = pq.poll();
+
+                
+                if (val <= c) {
+                    cnt++;
+                    c -= val;
+                }
+            }
+
+            System.out.println(cnt);
+        }
+    }
+}
