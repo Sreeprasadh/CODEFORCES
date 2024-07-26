@@ -1,0 +1,72 @@
+import java.util.*;
+
+public class Coprime {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+
+        while (t-- > 0) {
+            int n = sc.nextInt();
+
+            int[] a = new int[n];
+
+            int maxi = -1;
+
+            for(int i=0; i<n; i++){
+                a[i] = sc.nextInt();
+                maxi = Math.max(maxi, a[i]);
+            }
+
+            ArrayList<Pair> list = new ArrayList<>();
+
+            for(int i=1; i<=maxi; i++){
+                for(int j=i; j<=maxi; j++){
+                     if(gcd(i, j) == 1){
+                        list.add(new Pair(i, j));
+                     }
+                }
+            }
+
+            Map<Integer, Integer> map = new HashMap<>();
+            for(int i=0; i<n; i++){
+                map.put(a[i], Math.max(map.getOrDefault(a[i], 0), i+1));
+            }
+            
+            int len = list.size();
+
+            int ans = -1;
+            for(int i=0; i<len; i++){
+                Pair p = list.get(i);
+
+                int el1 = p.first;
+                int el2 = p.second;
+
+                if(map.containsKey(el1) && map.containsKey(el2)){
+                    int sum = map.get(el1) + map.get(el2);
+
+                    ans = Math.max(ans, sum);
+                }
+            }
+            System.out.println(ans);
+        }
+    }
+
+    private static int gcd(int a, int b){
+        while ((b!=0)) {
+            int temp = b;
+
+            b = a%b;
+            a = temp;
+        }
+        return a;
+    }
+
+    private static class Pair{
+        int first;
+        int second;
+        public Pair(int first, int second){
+            this.first = first;
+            this.second = second;
+        }
+    }
+}
