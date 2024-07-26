@@ -1,0 +1,55 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class CardboardOfPictures {
+    public static void main(String[] args) throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        int t = Integer.parseInt(reader.readLine());
+
+        while (t-- > 0) {
+            String[] input = reader.readLine().split(" ");
+            int n = Integer.parseInt(input[0]);
+            long c = Long.parseLong(input[1]);
+
+            int[] size = new int[n];
+            String[] sizes = reader.readLine().split(" ");
+            for (int i = 0; i < n; i++) {
+                size[i] = Integer.parseInt(sizes[i]);
+            }
+
+            long w = 0;
+            long l = 1, h = (long)1e9;
+
+            while (l <= h) {
+                long mid = l + (h - l) / 2;
+                long totalSize = 0;
+
+                for (int i = 0; i < n; i++) {
+                    long currentSize = 2 * mid + size[i];
+                    long squareSize = currentSize * currentSize;
+
+                    totalSize += squareSize;
+
+                   
+                    if (totalSize > c) {
+                        totalSize = Long.MAX_VALUE; 
+                        break;
+                    }
+                }
+
+               
+                if (totalSize == c) {
+                    w = mid;
+                    break;
+                } else if (totalSize < c) {
+                    w = mid; 
+                    l = mid + 1;
+                } else {
+                    h = mid - 1;
+                }
+            }
+            System.out.println(w);
+        }
+    }
+}
