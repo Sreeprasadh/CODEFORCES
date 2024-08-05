@@ -1,0 +1,56 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Main {
+    static int[] a;
+    static boolean ans;
+
+    // Method to check if removing all occurrences of x makes the array a palindrome
+    static void check(int x, int n) {
+        ArrayList<Integer> b = new ArrayList<>();
+        for (int i = 0; i < n; ++i) {
+            if (a[i] != x) {
+                b.add(a[i]);
+            }
+        }
+        int size = b.size();
+        for (int i = 0; i < size / 2; ++i) {
+            if (!b.get(i).equals(b.get(size - 1 - i))) {
+                return;
+            }
+        }
+        ans = true;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int qq = scanner.nextInt();
+        while (qq-- > 0) {
+            int n = scanner.nextInt();
+            a = new int[n];
+            ans = true;
+
+            for (int i = 0; i < n; ++i) {
+                a[i] = scanner.nextInt();
+            }
+
+            for (int i = 0; i < n; ++i) {
+                if (a[i] != a[n - i - 1]) {
+                    ans = false;
+                    check(a[i], n);
+                    check(a[n - i - 1], n);
+                    break;
+                }
+            }
+
+            if (ans) {
+                System.out.println("YES");
+            } else {
+                System.out.println("NO");
+            }
+        }
+
+        scanner.close();
+    }
+}
