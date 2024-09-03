@@ -1,0 +1,39 @@
+import java.util.*;
+
+public class Stable_groups {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+       
+        int n = sc.nextInt();
+        long k = sc.nextLong();
+        long x = sc.nextLong();
+
+        long[] a = new long[n];
+        for(int i=0; i<n; i++){
+            a[i] = sc.nextLong();
+        }
+        Arrays.sort(a);
+
+        ArrayList<Long> diff = new ArrayList<>();
+
+        for(int i=1; i<n; i++){
+            long d = a[i] - a[i-1];
+            if(d > x){
+                diff.add((long)Math.floor(d/x));
+            }
+           
+        }
+
+        long cnt = 1;
+        int len = diff.size();
+
+        for(int i=0; i<len; i++){
+            if (diff.get(i) > k) {
+                cnt++;
+            }
+            k = k-diff.get(i);
+        }
+
+        System.out.println(cnt);
+    }
+}
