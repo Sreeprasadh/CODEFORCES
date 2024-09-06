@@ -1,0 +1,52 @@
+import java.util.*;
+
+public class M_arrays{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+
+        while (t-- > 0) {
+            int n = sc.nextInt();
+            int m = sc.nextInt();
+
+            long[] a = new long[n];
+
+            for(int i=0; i<n; i++){
+                a[i] = sc.nextLong();
+            }
+
+            Map<Long, Integer> map = new HashMap<>();
+            
+            for(int i=0; i<n; i++){
+                long rem = a[i]%m;
+
+                map.put(rem, map.getOrDefault(rem, 0)+1);
+            }
+
+            long total = 0;
+
+            for(Map.Entry<Long, Integer> entry : map.entrySet()){
+                long rem = entry.getKey();
+                int cnt = entry.getValue();
+
+                long pair = m - rem;
+
+                if (rem==0) {
+                    total++;
+                }else if(!map.containsKey(pair)){
+                    total+= cnt;
+                }else if(rem == pair){
+                    total++;
+                }else if(pair > rem){
+                    int paircnt = map.get(pair);
+
+                    if(Math.abs(paircnt-cnt) <=1) total++;
+                    else{
+                        total += Math.abs(paircnt-cnt);
+                    }
+                }
+            }
+            System.out.println(total);   
+        }
+    }
+}
