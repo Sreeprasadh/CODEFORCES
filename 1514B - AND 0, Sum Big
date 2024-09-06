@@ -1,0 +1,39 @@
+import java.util.*;
+
+public class And0AndSum {
+    private static final int MOD = 1000000007;
+
+    // Function to perform modular exponentiation
+    private static long modPow(long base, long exponent, int mod) {
+        long result = 1;
+        base = base % mod;  // Handle base larger than mod
+
+        while (exponent > 0) {
+            // If exponent is odd, multiply base with result
+            if ((exponent % 2) == 1) {
+                result = (result * base) % mod;
+            }
+            // Exponent must be even now
+            exponent = exponent >> 1;  // Divide the exponent by 2
+            base = (base * base) % mod;  // Square the base
+        }
+        return result;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int t = sc.nextInt();
+
+        while (t-- > 0) {
+            long n = sc.nextLong();  // Use long for large numbers
+            long k = sc.nextLong();
+
+            // Compute (n^k) % MOD using modular exponentiation
+            long res = modPow(n, k, MOD);
+            System.out.println(res);
+        }
+
+        sc.close();  
+    }
+}
