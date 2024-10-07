@@ -1,0 +1,108 @@
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+public class C_Product_of_Three_Numbers {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt(); 
+          
+        while (t-- > 0) {
+            int n = sc.nextInt(); 
+            int sroot = (int)Math.sqrt(n);
+
+            
+
+            boolean found = false;
+            long v1 = 0, v2=0, v3=0;
+            for(int i=2; i<=sroot; i++){
+                if (n%i == 0) {
+                    int a = i;
+                    
+                    int[] barr = new int[1];
+
+                    if(isPossible(n/a , a, barr)){
+                        v1 = a;
+                        v2 = barr[0];
+                        v3 = n/(v1*v2);
+                        if (v2 != v3) {
+                            found = true;
+                            break;
+                        }
+                    }
+                }
+            }
+            if (found) {
+                System.out.println("YES ");
+                System.out.print(v1 + " " + v2 + " " + v3);
+                System.out.println();
+            }else{
+                System.out.println("NO ");
+            }
+        }
+        sc.close();
+    }
+
+    private static boolean isPossible(int b, int a, int[] barr){
+        int sroot = (int)Math.sqrt(b);
+
+        for(int i=a+1; i<=sroot; i++){
+            if(b%i == 0){
+                barr[0] = i;
+                return true;
+            }
+        }
+        return false;
+    }
+}
+
+==========================================================================================
+
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Scanner;
+import java.util.Set;
+
+public class C_Product_of_Three_Numbers {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt(); 
+          
+        while (t-- > 0) {
+            int n = sc.nextInt(); 
+           
+            Set<Integer> set = new HashSet<>();
+            for(int i=2; i*i <=n; i++){
+                if (n%i == 0 && !set.contains(i)) {
+                    set.add(i);
+                    n = n/i;
+                    break;
+                }
+            }
+
+            for(int i=2; i*i <=n; i++){
+                if (n%i == 0 && !set.contains(i)) {
+                    set.add(i);
+                    n = n/i;
+                    break;
+                }
+            }
+            
+            if(set.size() < 2 || set.contains(n)){
+                System.out.println("NO ");
+            }else{
+                
+                set.add(n);
+                System.out.println("YES ");
+                for(int num : set){
+                    System.out.print(num + " ");
+                }
+                System.out.println();
+            }
+        }
+        sc.close();
+    }
+}
