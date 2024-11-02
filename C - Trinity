@@ -1,0 +1,39 @@
+import java.util.*;
+
+public class C_Trinity {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        int t = sc.nextInt();
+        
+        while (t-- > 0) {
+            int n = sc.nextInt();
+            long[] arr = new long[n];
+
+            for(int i=0; i<n; i++){
+                arr[i] = sc.nextLong();
+            }
+
+            Arrays.sort(arr);
+
+            int ans = n;
+            int i=0, j=i+2;
+
+            while (i < n-2) {
+                
+                while (j < n && arr[i] + arr[i+1] > arr[j]) {
+                    j++;
+                }
+
+                int longest = j - i;
+                ans = Math.min(ans, n-longest);
+                i++;
+            }
+
+            System.out.println(ans);
+        }
+        
+        sc.close();
+    }
+ 
+}
