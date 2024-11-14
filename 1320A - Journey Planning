@@ -1,0 +1,42 @@
+import java.util.*;
+
+public class Journey_Planning{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+
+        
+        int n = sc.nextInt();
+        
+        int[] b = new int[n];
+        
+        int[] diff = new int[n];
+
+        for(int i=0; i<n; i++){
+            b[i] = sc.nextInt();
+
+            diff[i] = (b[i] - (i+1));
+        }
+
+        Map<Integer, List<Integer>> map = new HashMap<>();
+
+        for(int i=0; i<n; i++){
+            map.computeIfAbsent(diff[i], key -> new ArrayList<>()).add(b[i]);
+        }
+
+        long ans = 0;
+
+        for(Map.Entry<Integer, List<Integer>> entry : map.entrySet()){
+            List<Integer> list = entry.getValue();
+
+            long sum = 0;
+            int sz = list.size();
+            for(int i=0; i<sz; i++){
+                sum += list.get(i);
+            }
+
+            ans = Math.max(ans, sum);
+        }
+
+        System.out.println(ans);
+    }
+}
