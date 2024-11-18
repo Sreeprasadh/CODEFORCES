@@ -1,0 +1,75 @@
+import java.io.*;
+import java.util.*;
+
+public class C_News_Distribution {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        solve(br, bw);
+        bw.flush(); // Ensure all output is written to the output stream
+    }
+
+    private static void solve(BufferedReader br, BufferedWriter bw) throws IOException {
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        int n = Integer.parseInt(st.nextToken());
+        int m = Integer.parseInt(st.nextToken());
+
+        DisjointSet ds = new DisjointSet(n);
+
+        for (int i = 0; i < m; i++) {
+            st = new StringTokenizer(br.readLine());
+            int sz = Integer.parseInt(st.nextToken());
+
+            if (sz == 0) {
+                continue;
+            }
+
+            int first = Integer.parseInt(st.nextToken());
+            for (int j = 1; j < sz; j++) {
+                int next = Integer.parseInt(st.nextToken());
+                ds.unionBySize(first, next);
+            }
+        }
+
+        for (int i = 1; i <= n; i++) {
+            int ulparent = ds.findUPar(i);
+            bw.write(ds.size.get(ulparent) + " ");
+        }
+        bw.newLine();
+    }
+}
+
+class DisjointSet {
+    List<Integer> parent = new ArrayList<>();
+    List<Integer> size = new ArrayList<>();
+
+    public DisjointSet(int n) {
+        for (int i = 0; i <= n; i++) {
+            parent.add(i);
+            size.add(1);
+        }
+    }
+
+    public int findUPar(int node) {
+        if (node != parent.get(node)) {
+            parent.set(node, findUPar(parent.get(node))); // Path compression
+        }
+        return parent.get(node);
+    }
+
+    public void unionBySize(int u, int v) {
+        int ulp_u = findUPar(u);
+        int ulp_v = findUPar(v);
+
+        if (ulp_u == ulp_v) return; // Already in the same set
+
+        // Attach smaller set under the larger set
+        if (size.get(ulp_u) < size.get(ulp_v)) {
+            parent.set(ulp_u, ulp_v);
+            size.set(ulp_v, size.get(ulp_u) + size.get(ulp_v));
+        } else {
+            parent.set(ulp_v, ulp_u);
+            size.set(ulp_u, size.get(ulp_u) + size.get(ulp_v));
+        }
+    }
+}
