@@ -1,0 +1,156 @@
+import java.io.*;
+import java.util.*;
+
+public class F_Greetings {
+    static List<Pair> arr;
+    static long[] fenwickTree; // Use long for Fenwick Tree
+    static long maxCoordinate;
+
+    static class Pair implements Comparable<Pair> {
+        long first;
+        long second;
+
+        Pair(long first, long second) {
+            this.first = first;
+            this.second = second;
+        }
+
+        @Override
+        public int compareTo(Pair o) {
+            if (this.first != o.first) return Long.compare(this.first, o.first);
+            return Long.compare(this.second, o.second);
+        }
+    }
+
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+
+        int t = Integer.parseInt(br.readLine().trim());
+        while (t-- > 0) {
+            solve(br, bw);
+        }
+        br.close();
+        bw.flush();
+        bw.close();
+    }
+
+    private static void solve(BufferedReader br, BufferedWriter bw) throws IOException {
+        int n = Integer.parseInt(br.readLine().trim());
+
+        arr = new ArrayList<>();
+        Set<Long> allCoordinates = new HashSet<>();
+
+        for (int i = 0; i < n; i++) {
+            StringTokenizer st = new StringTokenizer(br.readLine());
+            long a = Long.parseLong(st.nextToken());
+            long b = Long.parseLong(st.nextToken());
+
+            arr.add(new Pair(a, b));
+            allCoordinates.add(b);
+        }
+
+        // Coordinate compression step
+        List<Long> sortedCoordinates = new ArrayList<>(allCoordinates);
+        Collections.sort(sortedCoordinates);
+        Map<Long, Long> coordinateToCompressed = new HashMap<>();
+
+        for (int i = 0; i < sortedCoordinates.size(); i++) {
+            coordinateToCompressed.put(sortedCoordinates.get(i), (long)(i + 1)); // 1-based index for Fenwick Tree
+        }
+
+        // Update array with compressed coordinates
+        for (Pair p : arr) {
+            p.second = coordinateToCompressed.get(p.second);
+        }
+
+        Collections.sort(arr);
+
+        maxCoordinate = sortedCoordinates.size();
+        fenwickTree = new long[(int) (maxCoordinate + 1)]; // size for 1-based Fenwick Tree
+
+        long ans = 0;
+        for (Pair p : arr) {
+            ans += query(maxCoordinate) - query(p.second);
+            update(p.second, 1);
+        }
+
+        bw.write(ans + "\n");
+    }
+
+    private static void update(long index, long delta) {
+        for (; index <= maxCoordinate; index += index & -index) {
+            fenwickTree[(int) index] += delta;
+        }
+    }
+
+    private static long query(long index) {
+        long sum = 0;
+        for (; index > 0; index -= index & -index) {
+            sum += fenwickTree[(int) index];
+        }
+        return sum;
+    }
+}
+
+
+//Below code was giving tle
+
+import java.util.*;
+
+public class F_Greetings {
+    static List<Pair> arr;
+    static TreeSet<Integer> set;
+    static int ans;
+
+    static class Pair implements Comparable<Pair>{
+        int first;
+        int second;
+
+        Pair(int first, int second){
+            this.first = first;
+            this.second = second;
+        }
+
+        @Override
+        public int compareTo(Pair o){
+            if(this.first != o.first) return Integer.compare(this.first, o.first);
+            return Integer.compare(this.second, o.second);
+        }
+    } 
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int t = sc.nextInt();
+        while (t-- > 0) {
+            solve(sc);
+        }
+        sc.close();
+    }
+
+    private static void solve(Scanner sc){
+        int n = sc.nextInt();
+
+        arr = new ArrayList<>();
+
+        for(int i=0; i<n; i++){
+            int a = sc.nextInt();
+            int b = sc.nextInt();
+
+            arr.add(new Pair(a, b));
+        }
+
+        Collections.sort(arr);
+        ans = 0;
+        set = new TreeSet<>();
+
+        for(Pair p : arr){
+            ans += set.size() - set.headSet(p.second).size();
+
+            set.add(p.second);
+        }
+        System.out.println(ans);
+    }
+
+}
