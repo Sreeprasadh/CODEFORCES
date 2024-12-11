@@ -1,0 +1,65 @@
+import java.util.*;
+
+public class C_Palindrome_Basis {
+    public static final int MOD = 1000000007;
+    public static final int N = 40000 + 10; // Maximum value for n
+    public static long[][] dp = new long[N][502]; // Maximum palindrome size is up to 502
+    public static List<Integer> palindromes = new ArrayList<>();
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Precompute all palindromes
+        generatePalindromes();
+
+        // Precompute DP array
+        preprocessDP();
+
+        int t = sc.nextInt();
+        while (t-- > 0) {
+            int n = sc.nextInt();
+            System.out.println(dp[n][palindromes.size() - 1]); // Use palindromes.size() for the last column
+        }
+    }
+
+    // Generate all palindromes up to N
+    private static void generatePalindromes() {
+        palindromes.add(0); // Add 0 as the base case
+        for (int i = 1; i < N; i++) {
+            if (isPalindrome(i)) {
+                palindromes.add(i);
+            }
+        }
+    }
+
+    // Check if a number is a palindrome
+    private static boolean isPalindrome(int num) {
+        int original = num, reversed = 0;
+        while (num > 0) {
+            reversed = reversed * 10 + num % 10;
+            num /= 10;
+        }
+        return original == reversed;
+    }
+
+    // Precompute the DP table
+    private static void preprocessDP() {
+        int pSize = palindromes.size(); // Get the size of the palindromes list
+
+        // Base case: dp[0][j] = 1 for all j
+        for (int j = 0; j < pSize; j++) {
+            dp[0][j] = 1;
+        }
+
+        // Fill the DP table
+        for (int i = 1; i < N; i++) {
+            for (int j = 1; j < pSize; j++) {
+                if (palindromes.get(j) <= i) {
+                    dp[i][j] = (dp[i][j - 1] + dp[i - palindromes.get(j)][j]) % MOD;
+                } else {
+                    dp[i][j] = dp[i][j - 1];
+                }
+            }
+        }
+    }
+}
