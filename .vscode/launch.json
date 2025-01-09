@@ -1,0 +1,623 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "B_Binomial_Coefficients_Kind_Of",
+            "request": "launch",
+            "mainClass": "B_Binomial_Coefficients_Kind_Of",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "BalancedTunnel",
+            "request": "launch",
+            "mainClass": "BalancedTunnel",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "ChatBan",
+            "request": "launch",
+            "mainClass": "ChatBan",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "A_Dora_s_Set",
+            "request": "launch",
+            "mainClass": "A_Dora_s_Set",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "B_Li_Hua_and_Pattern",
+            "request": "launch",
+            "mainClass": "B_Li_Hua_and_Pattern",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "D_Slavic_s_Exam",
+            "request": "launch",
+            "mainClass": "D_Slavic_s_Exam",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "C_Yet_Another_Card_Deck",
+            "request": "launch",
+            "mainClass": "C_Yet_Another_Card_Deck",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "B_Scale",
+            "request": "launch",
+            "mainClass": "B_Scale",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "B_Kill_Demodogs",
+            "request": "launch",
+            "mainClass": "B_Kill_Demodogs",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "YarikAndArray",
+            "request": "launch",
+            "mainClass": "YarikAndArray",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "CollectingGame",
+            "request": "launch",
+            "mainClass": "CollectingGame",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "Quests",
+            "request": "launch",
+            "mainClass": "Quests",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "EraseFirstOrSecond",
+            "request": "launch",
+            "mainClass": "EraseFirstOrSecond",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "DoubleEndedStrings",
+            "request": "launch",
+            "mainClass": "DoubleEndedStrings",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "MexOrMixup",
+            "request": "launch",
+            "mainClass": "MexOrMixup",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "TrianglesOnRectangles",
+            "request": "launch",
+            "mainClass": "TrianglesOnRectangles",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "DivanAndANewProject",
+            "request": "launch",
+            "mainClass": "DivanAndANewProject",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "MathematicalProblem",
+            "request": "launch",
+            "mainClass": "MathematicalProblem",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "updateQueries",
+            "request": "launch",
+            "mainClass": "updateQueries",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "beautifullllarray",
+            "request": "launch",
+            "mainClass": "beautifullllarray",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "matrixStab",
+            "request": "launch",
+            "mainClass": "matrixStab",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "Xaxis",
+            "request": "launch",
+            "mainClass": "Xaxis",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "BeautifulArray2",
+            "request": "launch",
+            "mainClass": "BeautifulArray2",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "LukeIsAFoodie",
+            "request": "launch",
+            "mainClass": "LukeIsAFoodie",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "numberBox",
+            "request": "launch",
+            "mainClass": "numberBox",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "ValerriagainstEveryone",
+            "request": "launch",
+            "mainClass": "ValerriagainstEveryone",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "Boredom",
+            "request": "launch",
+            "mainClass": "Boredom",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "boreDom",
+            "request": "launch",
+            "mainClass": "boreDom",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "newBakery",
+            "request": "launch",
+            "mainClass": "newBakery",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "AliceandBooks",
+            "request": "launch",
+            "mainClass": "AliceandBooks",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "roofConstruction",
+            "request": "launch",
+            "mainClass": "roofConstruction",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "redVersusBlue",
+            "request": "launch",
+            "mainClass": "redVersusBlue",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "secretBox",
+            "request": "launch",
+            "mainClass": "secretBox",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "maxmuls",
+            "request": "launch",
+            "mainClass": "maxmuls",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "manhattanCircle",
+            "request": "launch",
+            "mainClass": "manhattanCircle",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "goodPrefix",
+            "request": "launch",
+            "mainClass": "goodPrefix",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "maximumMultipleSum",
+            "request": "launch",
+            "mainClass": "maximumMultipleSum",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "creatingWords",
+            "request": "launch",
+            "mainClass": "creatingWords",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "largeAddition",
+            "request": "launch",
+            "mainClass": "largeAddition",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "Magnitude",
+            "request": "launch",
+            "mainClass": "Magnitude",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "Strangespliting",
+            "request": "launch",
+            "mainClass": "Strangespliting",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "xorSequences",
+            "request": "launch",
+            "mainClass": "xorSequences",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "earningOnbets",
+            "request": "launch",
+            "mainClass": "earningOnbets",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "guessTheMax",
+            "request": "launch",
+            "mainClass": "guessTheMax",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "buyingTorches",
+            "request": "launch",
+            "mainClass": "buyingTorches",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "johnyandAncientComputer",
+            "request": "launch",
+            "mainClass": "johnyandAncientComputer",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "helmetsinNightLight",
+            "request": "launch",
+            "mainClass": "helmetsinNightLight",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "ReverseASubstring",
+            "request": "launch",
+            "mainClass": "ReverseASubstring",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "bogoSort",
+            "request": "launch",
+            "mainClass": "bogoSort",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "moveBrackets",
+            "request": "launch",
+            "mainClass": "moveBrackets",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "amazon",
+            "request": "launch",
+            "mainClass": "amazon",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "IncDecCopy",
+            "request": "launch",
+            "mainClass": "IncDecCopy",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "verifyPassword",
+            "request": "launch",
+            "mainClass": "verifyPassword",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "addandDivide",
+            "request": "launch",
+            "mainClass": "addandDivide",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "binaryColoring",
+            "request": "launch",
+            "mainClass": "binaryColoring",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "Nikita",
+            "request": "launch",
+            "mainClass": "Nikita",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "chamoandMocha",
+            "request": "launch",
+            "mainClass": "chamoandMocha",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "QAQandMoch",
+            "request": "launch",
+            "mainClass": "QAQandMoch",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "bazokaandmocha",
+            "request": "launch",
+            "mainClass": "bazokaandmocha",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "hamburgers",
+            "request": "launch",
+            "mainClass": "hamburgers",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "Ingenuity",
+            "request": "launch",
+            "mainClass": "Ingenuity",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "symmetircEncoding",
+            "request": "launch",
+            "mainClass": "symmetircEncoding",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "phoneDesktop",
+            "request": "launch",
+            "mainClass": "phoneDesktop",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "catFoxandDoublemax",
+            "request": "launch",
+            "mainClass": "catFoxandDoublemax",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "Main",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "arrayMerging",
+            "request": "launch",
+            "mainClass": "arrayMerging",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "arrayMerging2",
+            "request": "launch",
+            "mainClass": "arrayMerging2",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "basketballTogether",
+            "request": "launch",
+            "mainClass": "basketballTogether",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "beautifulArray",
+            "request": "launch",
+            "mainClass": "beautifulArray",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "binaryCut",
+            "request": "launch",
+            "mainClass": "binaryCut",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "blackandwhiteStripe",
+            "request": "launch",
+            "mainClass": "blackandwhiteStripe",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "catFoxandLonelyArray",
+            "request": "launch",
+            "mainClass": "catFoxandLonelyArray",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "chess",
+            "request": "launch",
+            "mainClass": "chess",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "clockAndStrings",
+            "request": "launch",
+            "mainClass": "clockAndStrings",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "differentString",
+            "request": "launch",
+            "mainClass": "differentString",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "disjointsetUnionByRank",
+            "request": "launch",
+            "mainClass": "disjointsetUnionByRank",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "distinctSplit",
+            "request": "launch",
+            "mainClass": "distinctSplit",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "findtheCar",
+            "request": "launch",
+            "mainClass": "findtheCar",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "loneliness",
+            "request": "launch",
+            "mainClass": "loneliness",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "minimumLCM",
+            "request": "launch",
+            "mainClass": "minimumLCM",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "myfirstSorting",
+            "request": "launch",
+            "mainClass": "myfirstSorting",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "newArraymerging",
+            "request": "launch",
+            "mainClass": "newArraymerging",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "newfindcar",
+            "request": "launch",
+            "mainClass": "newfindcar",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "oddQueries",
+            "request": "launch",
+            "mainClass": "oddQueries",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "servalAndMochasArray",
+            "request": "launch",
+            "mainClass": "servalAndMochasArray",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "shoeShuffling",
+            "request": "launch",
+            "mainClass": "shoeShuffling",
+            "projectName": "Codeforces_practice_81c623f6"
+        },
+        {
+            "type": "java",
+            "name": "trafficLight",
+            "request": "launch",
+            "mainClass": "trafficLight",
+            "projectName": "Codeforces_practice_81c623f6"
+        }
+    ]
+}

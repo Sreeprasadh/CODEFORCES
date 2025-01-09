@@ -1,0 +1,74 @@
+import java.util.*;
+
+public class C_Queen {
+    static int N;
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+       
+        solve(sc);
+        
+        sc.close();
+    }
+
+    private static void solve(Scanner sc){
+        int n = sc.nextInt();
+        N=n;
+
+        int[][] a = new int[n][2];
+        for(int i=0; i<n; i++){
+            for(int j=0; j<2; j++){
+                a[i][j] = sc.nextInt();
+            }
+        }
+
+        Map<Integer, List<Integer>> adj = new HashMap<>();
+
+        for(int i=1; i<=n; i++){
+            adj.put(i, new ArrayList<>());
+        }
+
+        for(int i=1; i<=n; i++){
+            int parent = a[i-1][0];
+
+            if(parent!=-1){
+                adj.get(parent).add(i);
+            }
+        }
+
+        boolean found = false;
+        for(int i=1; i<=n; i++){
+            int c = a[i-1][1];
+
+            if(c==1){
+                boolean possible = dfs(adj, i, a);
+
+                if (possible) {
+                    found = true;
+                    System.out.print(i + " ");
+                }
+            }
+        }
+        if (found == false) {
+            System.out.print(-1);
+        }
+        System.out.println();
+    }
+
+    private static boolean dfs(Map<Integer,List<Integer>> adj, int node, int[][] a){
+
+        Set<Integer> vis = new HashSet<>();
+
+        vis.add(node);
+
+        for(int child : adj.get(node)){
+            int c = a[child-1][1];
+
+            if(c == 0){
+                return false;
+            }
+        }
+        return true;
+    }
+
+}

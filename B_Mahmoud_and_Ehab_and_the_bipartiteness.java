@@ -1,0 +1,59 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
+import java.util.*;
+import java.util.Set;
+
+public class B_Mahmoud_and_Ehab_and_the_bipartiteness {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt(); 
+        
+        ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
+        for(int i=0; i<=n; i++){
+            adj.add(new ArrayList<>());
+        }
+
+        for(int i=0; i<n-1; i++){
+           int u = sc.nextInt();
+           int v = sc.nextInt();
+
+           adj.get(u).add(v);
+           adj.get(v).add(u);
+        }
+
+        int[] color = new int[n+1];
+
+        color[1] = 1;
+        Queue<Integer> q = new LinkedList<>();
+        q.offer(1);
+
+        long set1 = 0, set2 = 0;
+
+        while (!q.isEmpty()) {
+            int node = q.poll();
+
+            if(color[node] == 1){
+                set1++;
+            }else{
+                set2++;
+            }
+
+            for(int neighbor : adj.get(node)){
+                if(color[neighbor] == 0){
+                    color[neighbor] = (color[node] == 1 ? 2 : 1);
+                    q.offer(neighbor);
+                }
+            }
+        }
+
+        long total = set1*set2;
+
+        System.out.println(total - (n-1));
+    }
+}
