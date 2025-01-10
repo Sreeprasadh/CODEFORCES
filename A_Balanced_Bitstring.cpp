@@ -56,7 +56,6 @@ void solve() {
         }
     }
 
-    //bool f = true;
 
     for(int i=0; i<k; i++){
         if(s[i] != '?'){
