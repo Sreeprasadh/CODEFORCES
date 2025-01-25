@@ -37,51 +37,37 @@ void fast_io() {
 #define debug(x)
 #endif
 
-// Define a custom comparator
-struct Compare {
-    bool operator()(const pair<int, int>& a, const pair<int, int>& b) {
-        if (a.first == b.first) {
-            // If the first elements are equal, the one with the higher second element comes first
-            return a.second < b.second;
-        }
-        // Otherwise, the smaller first element comes first
-        return a.first > b.first;
-    }
-};
+
 
 void solve() {
     
     int n;
     cin>>n;
-    vector<vector<int>> adj(n+1);
+    
+    vector<string> g(n);
+    for(auto &row : g){
+        cin>>row;
+    }
 
-    for(int i=1; i<=n; i++){
-        string s;
-        cin>>s;
+    vector<int> p(n);
+    for(int i=0; i<n; i++){
+        p[i] = i;
+    }
+    
+    for(int i=0; i<n; i++){
+        for(int j=i+1; j<n; j++){
+            int x = p[i], y = p[j];
 
-        for(int j=0; j<n; j++){
-            if(s[j] == '1'){
-                adj[i].push_back(j+1);
-                adj[j+1].push_back(i);
+            if((g[x][y] == '1' && x > y) || (g[x][y] == '0' && x < y)){
+                swap(p[i], p[j]);
             }
         }
     }
 
-    priority_queue<pair<int,int> , vector<pair<int,int>>, Compare> min_heap;
-
-    for(int i=1; i<=n; i++){
-        min_heap.push({adj[i].size(),i});
-    }
-
-    while (!min_heap.empty())
-    {
-        int pp = min_heap.top().second;
-        min_heap.pop();
-
-        cout<<pp<<" ";
+    for(int i=0; i<n; i++){
+        cout<<p[i]+1<<" ";
     }
     cout<<endl;
-    
 }
 
 int main() {
