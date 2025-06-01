@@ -1,5 +1,5 @@
 import java.util.*;
-
+//adding a comment to test github
 public class C_Queen {
     static int N;
     public static void main(String[] args) {
